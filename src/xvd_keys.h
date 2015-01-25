@@ -24,10 +24,10 @@
 #include "xvd_data_types.h"
 
 
-void 
+void
 xvd_keys_init(XvdInstance *Inst);
 
-void 
+void
 xvd_keys_release(XvdInstance *Inst);
 
 #endif

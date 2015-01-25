@@ -27,10 +27,10 @@
 gboolean
 xvd_xfconf_init(XvdInstance *Inst);
 
-void   
+void
 xvd_xfconf_get_vol_step(XvdInstance *Inst);
 
-void 
+void
 xvd_xfconf_shutdown(XvdInstance *Inst);
 
 #endif

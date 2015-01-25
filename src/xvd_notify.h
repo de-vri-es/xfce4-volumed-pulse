@@ -32,12 +32,12 @@
 #define LAYOUT_ICON_ONLY "x-canonical-private-icon-only"
 
 
-void 
-xvd_notify_notification(XvdInstance *Inst, 
-						gchar* icon, 
+void
+xvd_notify_notification(XvdInstance *Inst,
+						gchar* icon,
 						gint value);
 
-void 
+void
 xvd_notify_volume_notification(XvdInstance *Inst);
 
 void
@@ -46,11 +46,11 @@ xvd_notify_overshoot_notification(XvdInstance *Inst);
 void
 xvd_notify_undershoot_notification(XvdInstance *Inst);
 
-void 
-xvd_notify_init(XvdInstance *Inst, 
+void
+xvd_notify_init(XvdInstance *Inst,
 				const gchar *appname);
 
-void 
+void
 xvd_notify_uninit(XvdInstance *Inst);
 
 #endif

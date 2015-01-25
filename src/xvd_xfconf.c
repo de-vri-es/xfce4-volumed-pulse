@@ -28,7 +28,7 @@ _xvd_xfconf_reinit_vol_step(XvdInstance *Inst)
 		g_debug ("Xfconf reinit: volume step is now %u\n", Inst->vol_step);
 }
 
-static void 
+static void
 _xvd_xfconf_handle_changes(XfconfChannel  *re_channel,
 						   const gchar    *re_property_name,
 						   const GValue   *re_value,
@@ -36,7 +36,7 @@ _xvd_xfconf_handle_changes(XfconfChannel  *re_channel,
 {
 	XvdInstance *Inst = (XvdInstance *)ptr;
 	g_debug ("Xfconf event on %s\n", re_property_name);
-	
+
 	if (g_strcmp0 (re_property_name, XFCONF_MIXER_VOL_STEP) == 0) {
 		_xvd_xfconf_reinit_vol_step(Inst);
 	}
@@ -58,7 +58,7 @@ xvd_xfconf_init(XvdInstance *Inst)
 	return TRUE;
 }
 
-void 
+void
 xvd_xfconf_get_vol_step(XvdInstance *Inst)
 {
 	Inst->vol_step = xfconf_channel_get_uint (Inst->chan, XFCONF_MIXER_VOL_STEP, VOL_STEP_DEFAULT_VAL);
@@ -70,7 +70,7 @@ xvd_xfconf_get_vol_step(XvdInstance *Inst)
 	g_debug("%s %u\n", "Xfconf volume step:", Inst->vol_step);
 }
 
-void 
+void
 xvd_xfconf_shutdown(XvdInstance *Inst)
 {
 	xfconf_shutdown ();

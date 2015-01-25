@@ -32,9 +32,9 @@ static
 void xvd_raise_handler (const char *keystring, void *Inst)
 {
   XvdInstance *xvd_inst = (XvdInstance *) Inst;
-  
+
   g_debug ("The RaiseVolume key was pressed.");
-  
+
   xvd_update_volume (xvd_inst,
                      XVD_UP);
 }
@@ -43,9 +43,9 @@ static
 void xvd_lower_handler (const char *keystring, void *Inst)
 {
   XvdInstance *xvd_inst = (XvdInstance *) Inst;
-  
+
   g_debug ("The LowerVolume key was pressed.");
-  
+
   xvd_update_volume (xvd_inst,
                      XVD_DOWN);
 }
@@ -54,9 +54,9 @@ static
 void xvd_mute_handler (const char *keystring, void *Inst)
 {
   XvdInstance *xvd_inst = (XvdInstance *) Inst;
-  
+
   g_debug ("The LowerVolume key was pressed.");
-  
+
   xvd_toggle_mute (xvd_inst);
 }
 
@@ -81,8 +81,8 @@ xvd_keys_init(XvdInstance *Inst)
     keybinder_bind ("<Ctrl><Alt><Super>XF86AudioRaiseVolume", xvd_raise_handler, Inst);
     keybinder_bind ("<Shift><Alt><Super>XF86AudioRaiseVolume", xvd_raise_handler, Inst);
     keybinder_bind ("<Ctrl><Shift><Alt><Super>XF86AudioRaiseVolume", xvd_raise_handler, Inst);
-    
-    
+
+
     keybinder_bind ("XF86AudioLowerVolume", xvd_lower_handler, Inst);
     keybinder_bind ("<Ctrl>XF86AudioLowerVolume", xvd_lower_handler, Inst);
     keybinder_bind ("<Alt>XF86AudioLowerVolume", xvd_lower_handler, Inst);
@@ -99,8 +99,8 @@ xvd_keys_init(XvdInstance *Inst)
     keybinder_bind ("<Ctrl><Alt><Super>XF86AudioLowerVolume", xvd_lower_handler, Inst);
     keybinder_bind ("<Shift><Alt><Super>XF86AudioLowerVolume", xvd_lower_handler, Inst);
     keybinder_bind ("<Ctrl><Shift><Alt><Super>XF86AudioLowerVolume", xvd_lower_handler, Inst);
-    
-    
+
+
     keybinder_bind ("XF86AudioMute", xvd_mute_handler, Inst);
     keybinder_bind ("<Ctrl>XF86AudioMute", xvd_mute_handler, Inst);
     keybinder_bind ("<Alt>XF86AudioMute", xvd_mute_handler, Inst);
@@ -139,8 +139,8 @@ xvd_keys_release (XvdInstance *Inst)
     keybinder_unbind ("<Ctrl><Alt><Super>XF86AudioRaiseVolume", xvd_raise_handler);
     keybinder_unbind ("<Shift><Alt><Super>XF86AudioRaiseVolume", xvd_raise_handler);
     keybinder_unbind ("<Ctrl><Shift><Alt><Super>XF86AudioRaiseVolume", xvd_raise_handler);
-    
-    
+
+
     keybinder_unbind ("XF86AudioLowerVolume", xvd_lower_handler);
     keybinder_unbind ("<Ctrl>XF86AudioLowerVolume", xvd_lower_handler);
     keybinder_unbind ("<Alt>XF86AudioLowerVolume", xvd_lower_handler);
@@ -157,8 +157,8 @@ xvd_keys_release (XvdInstance *Inst)
     keybinder_unbind ("<Ctrl><Alt><Super>XF86AudioLowerVolume", xvd_lower_handler);
     keybinder_unbind ("<Shift><Alt><Super>XF86AudioLowerVolume", xvd_lower_handler);
     keybinder_unbind ("<Ctrl><Shift><Alt><Super>XF86AudioLowerVolume", xvd_lower_handler);
-    
-    
+
+
     keybinder_unbind ("XF86AudioMute", xvd_mute_handler);
     keybinder_unbind ("<Ctrl>XF86AudioMute", xvd_mute_handler);
     keybinder_unbind ("<Alt>XF86AudioMute", xvd_mute_handler);

@@ -80,22 +80,22 @@ xvd_daemonize(void)
 #endif
 }
 
-static void 
+static void
 xvd_shutdown(void)
 {
 	xvd_close_pulse (Inst);
-	
+
 	#ifdef HAVE_LIBNOTIFY
 	xvd_notify_uninit (Inst);
 	#endif
-	
+
 	xvd_keys_release (Inst);
 	xvd_xfconf_shutdown (Inst);
-	
+
 	//TODO xvd_instance_free
 }
 
-static void 
+static void
 xvd_instance_init(XvdInstance *i)
 {
 	i->pa_main_loop = NULL;
@@ -109,7 +109,7 @@ xvd_instance_init(XvdInstance *i)
 	#endif
 }
 
-gint 
+gint
 main(gint argc, gchar **argv)
 {
 	GError         *error = NULL;
@@ -167,7 +167,7 @@ main(gint argc, gchar **argv)
 		xvd_shutdown ();
 		return EXIT_FAILURE;
 	}
-  
+
 	/* Pulse init */
 	if (!xvd_open_pulse (Inst))
 	{
@@ -175,18 +175,18 @@ main(gint argc, gchar **argv)
 		xvd_shutdown ();
 		return EXIT_FAILURE;
 	}
-	
+
 	xvd_xfconf_get_vol_step (Inst);
-	
+
 	/* Libnotify init and idle till ready for the main loop */
 	g_set_application_name (XVD_APPNAME);
 	#ifdef HAVE_LIBNOTIFY
 	xvd_notify_init (Inst, XVD_APPNAME);
 	#endif
-	
+
 	Inst->loop = g_main_loop_new (NULL, FALSE);
 	g_main_loop_run (Inst->loop);
-	
+
 	xvd_shutdown ();
 	return 0;
 }

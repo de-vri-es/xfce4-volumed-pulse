@@ -57,11 +57,11 @@ typedef struct {
 	guint32           sink_index;
 	pa_cvolume        volume;
 	int               mute;
-	
+
 	/* Xfconf vars */
 	XfconfChannel		*chan;
 	guint				vol_step;
-  
+
   #ifdef HAVE_LIBNOTIFY
     /* Libnotify vars */
 	gboolean			gauge_notifications;
