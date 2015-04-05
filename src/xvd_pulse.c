@@ -386,10 +386,12 @@ xvd_context_state_callback (pa_context *c,
       case PA_CONTEXT_TERMINATED:
         g_debug ("xvd_context_state_callback: The connection was terminated cleanly");
         i->sink_index = PA_INVALID_INDEX;
+        xvd_connect_to_pulse (i);
       break;
       case PA_CONTEXT_FAILED:
-        g_critical("xvd_context_state_callback: The connection failed or was disconnected, is PulseAudio Daemon running?");
+        g_warning ("xvd_context_state_callback: The connection failed or was disconnected, is PulseAudio Daemon running?");
         i->sink_index = PA_INVALID_INDEX;
+        xvd_connect_to_pulse (i);
       break;
       case PA_CONTEXT_READY:
         g_debug ("xvd_context_state_callback: The connection is established, the context is ready to execute operations");
